@@ -7,7 +7,7 @@
 		<include  src="../header.zul"> </include>
 		<div  style="display:flex; flex-direction:row;">
 			<div style = "width:50%" >
-			<label> Gioi thieu cong ty: </label>
+			<label> Gioi thieu cong ty:1 </label>
 			<h:p> Cong ty chuyen ban nhung mat hang phu kien da banh va chia se kien thuc ve da bong </h:p>
 			</div>
 			
