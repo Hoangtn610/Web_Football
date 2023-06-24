@@ -1,5 +1,6 @@
 package com.header;
 
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -21,7 +22,12 @@ public class HeaderController extends SelectorComposer<Div> {
 		super.doAfterCompose(comp);
 	}
 	@Listen("onClick=#shopping")
-	public void sho() {
-		Messagebox.show("ss");
+	public void showShoppingPage() {
+		Executions.getCurrent().sendRedirect("../Page/ShoppingPage.zul");
 	}
+	@Listen("onClick=#homePage")
+	public void showHomeoage() {
+		Executions.getCurrent().sendRedirect("../trangchu/trangchu.zul");
+	}
+	
 }

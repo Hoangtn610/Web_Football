@@ -1,9 +1,9 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
-<zk xmlns:h="http://www.w3.org/1999/xhtml">
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n = "native">
+	<h:link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
 		.head-format{
-		 display:flex; flex-direction:row; justify-content:
-		space-between; background-color: #FFFFFF; height: 50px;
+		 display:flex; flex-direction:row;  background-color: #FFFFFF; height: 80px;
 		align-items: center; }
 		
 		 .nav-item{
@@ -13,7 +13,7 @@
 		.font-head:hover{ color: #873319; } 
 		
 		.font-head {
-		font-size : 11px; font-weight : 600; text-decoration: none;color
+		font-size : 15px; font-weight : 600; text-decoration: none;color
 		: black}
 		
 		.img2 {height: 50px; width: 50px;}
@@ -21,44 +21,81 @@
 
 	<div apply="com.header.HeaderController">
 
-		<div style="background-color: #873319; height :40px;
+		<div
+			style="background-color: #873319; height :40px;
 			 display:flex; flex-direction:row; align-items: center; font-weight : 600; color:white; justify-content: space-between">
-			<h:p style ="font-size : 13px; margin-left:5px"  > Free Shipping on all orders over $50 </h:p> 
-			
-			<div style=" width:160px; display:flex; flex-direction:row; justify-content: space-between; margin-right:20px">
-			<image height ="30px" src= "/anh/logoMXH/facebook.png"> </image>
-			<image height ="30px" src= "/anh/logoMXH/instagram.png"> </image>
-			<image height ="30px" src= "/anh/logoMXH/twitter.png"> </image>
+			<h:p style="font-size : 13px; margin-left:5px">
+				Free Shipping on all orders over $50
+			</h:p>
+			<div
+				style=" width:160px; display:flex; flex-direction:row; justify-content: space-between; margin-right:20px">
+				<a
+					href="https://www.facebook.com/hoangmeo.truongnguyen/"
+					target="_blank">
+					<image height="30px"
+						src="/anh/logoMXH/facebook.png">
+					</image>
+				</a>
+				<a>
+					<image height="30px"
+						src="/anh/logoMXH/instagram.png">
+					</image>
+				</a>
+				<a>
+					<image height="30px"
+						src="/anh/logoMXH/twitter.png">
+					</image>
+				</a>
 			</div>
 		</div>
-		
 
 
-		<div sclass="head-format"
-			style="display:flex; flex-direction:row; justify-content: space-between; ">
-			<label style ="font-size : 35px;color:#873319;font-family: Helvetica;width:60%" >HoangTR. </label>
 
-			<h:li sclass="nav-item">
-				<a style="cursor: pointer;" sclass="font-head"
-					id="homePage">
-					Home
-				</a>
-			</h:li>
-			<h:li sclass="nav-item">
-				<a style="cursor: pointer;" sclass="font-head"
-					id="shopping">
-					Shop
-				</a>
-			</h:li>
-			<h:li sclass="nav-item">
-				<a style="cursor: pointer;" sclass="font-head"
-					id="soccerSkills">
-					Skill
-				</a>
-			</h:li>
+		<div sclass="head-format">
+			<label
+				style="font-size : 50px;color:#873319;font-family: dinneuzeitgroteskltw01-_812426, sans-serif;width:60%">
+				HoangTR.
+			</label>
 
+			<div width="22%"
+				style="display:flex; flex-direction:row; justify-content: space-between; align-items:center">
+				<h:li sclass="nav-item">
+					<a style="cursor: pointer;" sclass="font-head"
+						id="homePage">
+						Home
+					</a>
+				</h:li>
+				<h:li sclass="nav-item">
+					<a style="cursor: pointer;" sclass="font-head"
+						id="shopping">
+						Shop
+					</a>
+				</h:li>
+				<h:li sclass="nav-item">
+					<a style="cursor: pointer;" sclass="font-head"
+						id="soccerSkills">
+						Skill
+					</a>
+				</h:li>
+				<textbox
+					style="border:1px solid #873319;border-radius:20px ;width: 140px;height: 28px;"
+					placeholder="Search...">
+				</textbox>
+			</div>
+			
+			<div width="10%"
+				style="display:flex; flex-direction:row;  align-items:center;justify-content:center;margin-left:25px">
+				<div
+					style="border-radius:50%;border:1px solid #CCC;overflow:hidden;margin-right:10px">
+					<image height="30px"
+						src="/anh/logoMXH/twitter.png">
+					</image>
+				</div>
+				<h:i class="fa-solid fa-angle-down"></h:i>
+			</div>
+
+			<h:i style="" class="fa fa-thin fa-cart-shopping fa-xl"></h:i>
 		</div>
 
-		<div>Dang xuat</div>
 	</div>
 </zk>
