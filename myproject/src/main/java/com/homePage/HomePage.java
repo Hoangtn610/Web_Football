@@ -1,5 +1,6 @@
 package com.homePage;
 
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -19,9 +20,5 @@ public class HomePage extends SelectorComposer<Div> {
 	public void doAfterCompose(Div comp) throws Exception {
 		// TODO Auto-generated method stub
 		super.doAfterCompose(comp);
-	}
-	@Listen("onClick=#shopping")
-	public void sho() {
-		Messagebox.show("ss");
 	}
 }
