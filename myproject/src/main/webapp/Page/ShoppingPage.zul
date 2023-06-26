@@ -1,13 +1,50 @@
 <?page title="Shopping Page" contentType="text/html;charset=UTF-8"?>
-<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="native">
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
 	<h:link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<div apply="com.shoppingPage.ShoppingPageController"
+
+	<h:meta charset="utf-8" />
+	<h:meta name="viewport"
+		content="width=device-width, initial-scale=1" />
+	<h:link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+	</script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+	</script>
+
+	<div id ="shopPagediv" apply="com.shoppingPage.ShoppingPageController"
 		style=" background-size:cover; height: 100vh">
 		<include src="../header.zul"></include>
+		
+		<div viewModel="@id('vm1') @init('com.shoppingPage.ShoppingPageController')">
+					<div class="container-fluid">
+						<div class="row row-no-gutters">
+							<forEach items="@load(vm1.productlist)">
 
-		<label>hoang</label>
+								<!-- 							<a
+									href="SingleProductView.zul?id=${each.productID}">
+									Click
+									</a>
+									<label value="${each.tensp }" />
+									<label value="${each.tinhtranghang}" /> -->
+
+								<div class="col-sm-2 ">
+									<h:image
+										style="width: 266px;height: 266px;"
+										src="https://static.wixstatic.com/media/c837a6_d10ed1caf1ff41b0ba962e2ee7b4dedf~mv2.jpg/v1/fill/w_903,h_1193,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_d10ed1caf1ff41b0ba962e2ee7b4dedf~mv2.jpg">
+									</h:image>
+								</div>
+
+							</forEach>
+						</div>
+					</div>
+		</div>
+
+
 	</div>
 </zk>
