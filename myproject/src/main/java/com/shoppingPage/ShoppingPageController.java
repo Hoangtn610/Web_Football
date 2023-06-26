@@ -11,6 +11,8 @@ import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.Div;
 
+import com.tableDao.ProductDAO;
+
 public class ShoppingPageController extends SelectorComposer<Div> {
 
 	/**
@@ -41,6 +43,7 @@ public class ShoppingPageController extends SelectorComposer<Div> {
 	        items.add("Item 1");
 	        items.add("Item 2");
 	        items.add("Item 3");
+	        ProductDAO productDAO = new ProductDAO();
 	}
 	public List<String> getItems() {
 		return items;
