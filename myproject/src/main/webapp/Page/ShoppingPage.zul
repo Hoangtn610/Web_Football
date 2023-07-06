@@ -16,33 +16,64 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 	</script>
-
+	<h:link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+      <style> 
+      .width{
+      width:80%
+      }
+      .p0{
+      padding: 0px;
+      }
+      .col-lg-3.p0:hover{
+      border: 1px solid #ccc;
+      background-color: #ddd;
+      }
+      a div{
+       color: black
+      }
+      .style-none:hover{
+      text-decoration: none;
+      }
+      </style>  
 	<div id ="shopPagediv" apply="com.shoppingPage.ShoppingPageController"
 		style=" background-size:cover; height: 100vh">
 		<include src="../header.zul"></include>
 		
 		<div viewModel="@id('vm1') @init('com.shoppingPage.ShoppingPageController')">
-					<div class="container-fluid">
-						<div class="row row-no-gutters">
+				<h:div style = "align-items:center;display:flex;flex-direction:column;">
+					<h:div class="container-fluid" sclass="width">
+						<h:div class="row">
 							<forEach items="@load(vm1.productlist)">
-
-								<!-- 							<a
-									href="SingleProductView.zul?id=${each.productID}">
-									Click
+								<div class="col-lg-3 p0" style="position: relative" >
+									<a href="SingleProductView.zul?id=${each.productID}" sclass="style-none">
+									<div>
+										<h:image
+											style="width: 300px;height: 300px;"
+											src="@load(each.imagePath)">
+										</h:image>
+									<h:div sclass="style-none" >
+										${each.productName }
+									</h:div>
+									<h:div>
+										${each.quantityInStock }
+									</h:div>
+									<h:div style="position: absolute; top: 274px; left: 3px; background-color: white;">
+										<label value="${each.price}$" />
+									</h:div>
+									</div>
 									</a>
-									<label value="${each.tensp }" />
-									<label value="${each.tinhtranghang}" /> -->
-
-								<div class="col-sm-2 ">
-									<h:image
-										style="width: 266px;height: 266px;"
-										src="https://static.wixstatic.com/media/c837a6_d10ed1caf1ff41b0ba962e2ee7b4dedf~mv2.jpg/v1/fill/w_903,h_1193,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_d10ed1caf1ff41b0ba962e2ee7b4dedf~mv2.jpg">
-									</h:image>
 								</div>
-
+								
 							</forEach>
-						</div>
-					</div>
+							
+							
+							
+						</h:div>
+					</h:div>
+				</h:div>
 		</div>
 
 

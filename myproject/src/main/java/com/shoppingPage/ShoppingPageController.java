@@ -12,6 +12,7 @@ import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.Div;
 
 import com.tableDao.ProductDAO;
+import com.tableData.Product;
 
 public class ShoppingPageController extends SelectorComposer<Div> {
 
@@ -20,12 +21,12 @@ public class ShoppingPageController extends SelectorComposer<Div> {
 	 */
 	private static final long serialVersionUID = 1L;
 	private List<String> items;
-	private List<product> productlist;
+	private List<Product> productlist;
 	
-	public List<product> getProductlist() {
+	public List<Product> getProductlist() {
 		return productlist;
 	}
-	public void setProductlist(List<product> productlist) {
+	public void setProductlist(List<Product> productlist) {
 		this.productlist = productlist;
 	}
 	@WireVariable
@@ -39,55 +40,14 @@ public class ShoppingPageController extends SelectorComposer<Div> {
 	public void doAfterCompose(Div comp) throws Exception {
 		// TODO Auto-generated method stub
 		super.doAfterCompose(comp);
-		 items = new ArrayList<>();
-	        items.add("Item 1");
-	        items.add("Item 2");
-	        items.add("Item 3");
-	        ProductDAO productDAO = new ProductDAO();
 	}
 	public List<String> getItems() {
 		return items;
 	}
 	
-	public static class product{
-		public String tensp;
-		public String tinhtranghang;
-		public Integer productID;
-		public product() {
-			
-		}
-		public product (String tensp, String tinhtranghang, Integer productid) {
-			this.tensp = tensp;
-			this.tinhtranghang = tinhtranghang;
-			this.productID = productid;
-		}
-		public String getTensp() {
-			return tensp;
-		}
-		public String getTinhtranghang() {
-			return tinhtranghang;
-		}
-		public Integer getProductID() {
-			return productID;
-		}
-		
-		
-		
-	}
 	@Init
     public void init() {
-		product sanpham1 = new product("mu","conhang",1);
-		product sanpham2 = new product("ao","conhang",2);
-		product sanpham3 = new product("quan","hethang",3);
-		productlist = new ArrayList<>();
-		productlist.add(sanpham3);
-		productlist.add(sanpham1);
-		productlist.add(sanpham2);
-		productlist.add(sanpham2);
-		productlist.add(sanpham2);
-		productlist.add(sanpham2);
-		productlist.add(sanpham2);
-		productlist.add(sanpham2);
-		//setProductlist(productlist);
+		ProductDAO productDAO = new ProductDAO();
+		productlist = productDAO.getAllProduct();
     }
 }
