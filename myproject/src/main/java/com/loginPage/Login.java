@@ -62,9 +62,9 @@ public class Login extends SelectorComposer<Hlayout> {
 
 	@Listen("onClick=#submitButton")
 	public void onClickSubmitButton() {
-		if(checklogin()) {
+//		if(checklogin()) {
 			Executions.getCurrent().sendRedirect("./trangchu/trangchu.zul");
-		}
+//		}
 	}
 	
 	@Listen("onOK=#userName,#password")

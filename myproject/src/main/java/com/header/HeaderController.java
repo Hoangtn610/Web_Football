@@ -15,6 +15,8 @@ public class HeaderController extends SelectorComposer<Div> {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Wire
+	private Div IconAngel,myDropdown;
+	@Wire
 	private A homePage,shopping,soccerSkills,support,aboutUs;
 	@Override
 	public void doAfterCompose(Div comp) throws Exception {
@@ -28,6 +30,10 @@ public class HeaderController extends SelectorComposer<Div> {
 	@Listen("onClick=#homePage")
 	public void showHomeoage() {
 		Executions.getCurrent().sendRedirect("../trangchu/trangchu.zul");
+	}
+	@Listen("onClick=#IconAngel")
+	public void showMenuDropDown() {
+		myDropdown.setStyle("display:block;");
 	}
 	
 }

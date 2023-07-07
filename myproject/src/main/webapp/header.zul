@@ -2,24 +2,55 @@
 <zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n = "native">
 	<h:link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
-		.head-format{
-		 display:flex; flex-direction:row;  background-color: #FFFFFF; height: 80px;
-		align-items: center; }
-		
-		 .nav-item{
-		  list-style-type: none; height
-		: 100%; } 
-		
-		.font-head:hover{ color: #873319; } 
-		
-		.font-head {
-		font-size : 15px; font-weight : 600; text-decoration: none;color
-		: black}
-		
-		.img2 {height: 50px; width: 50px;}
-	</style>
+		.head-format{ display:flex; flex-direction:row;
+		background-color: #FFFFFF; height: 80px; align-items: center; }
 
-	<div apply="com.header.HeaderController">
+		.nav-item{ list-style-type: none; height : 100%; }
+
+		.font-head:hover{ color: #873319; }
+
+		.font-head { font-size : 15px; font-weight : 600;
+		text-decoration: none;color : black}
+
+		.img2 {height: 50px; width: 50px;}
+
+
+
+		.dropdown { position: relative; display: inline-block; }
+
+		.dropdown-content { display: none; position: absolute;
+		background-color: #f1f1f1; min-width: 160px; z-index: 1;color: black; font-weight: 300px;}
+
+		.dropdown-content .menuText { color: black; padding: 8px 10px;
+		text-decoration: none; display: block; font-size:18px }
+
+		.dropdown-content .menuText:hover {color: #CB4C25;}
+
+		
+	</style>
+	
+	<script>
+	// Close the dropdown if the user clicks outside of it
+	hoang.onclick = function(event) {
+	  if (!event.target.matches('.fa-solid fa-angle-down')) {
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i &lt; dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	
+	
+	  document.addEventListener("click", (evt) => {
+		console.log(1);
+      });
+</script>
+
+	<div id="hoang" apply="com.header.HeaderController">
 
 		<div
 			style="background-color: #873319; height :40px;
@@ -91,7 +122,19 @@
 						src="/anh/logoMXH/twitter.png">
 					</image>
 				</div>
-				<h:i class="fa-solid fa-angle-down"></h:i>
+				<div class="dropdown">
+					<h:div id="IconAngel" style="padding-top:3px">
+						<h:i class="fa-solid fa-angle-down fa-2xl" style= "color:#873319;width:14px;height:14px;"></h:i>
+					</h:div>
+					<div id="myDropdown" class="dropdown-content">
+					    <h:a class="menuText" href="#">My Orders</h:a>
+					    <h:a class="menuText" href="#">My Address</h:a>
+					    <h:a class="menuText" href="#">My Wallet</h:a>
+					    <h:a class="menuText" href="#">My Subcription</h:a>
+					    <h:a class="menuText" href="#">My Account</h:a>
+					    <h:a class="menuText" style="border-top:1px solid #CCC" href="#">Logout</h:a>
+					 </div>
+				</div>
 			</div>
 
 			<h:i style="" class="fa fa-thin fa-cart-shopping fa-xl"></h:i>
