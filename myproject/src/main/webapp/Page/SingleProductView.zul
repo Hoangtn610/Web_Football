@@ -1,8 +1,22 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk>
-<div apply = "com.shoppingPage.SingleProductViewController" >
-<include src="../header.zul"></include>
+	<div apply="com.shoppingPage.SingleProductViewController">
+		<include src="../header.zul"></include>
 
-<image id= "productImg"></image>
-</div>
+		<div sclass="col-md-8">
+
+<!-- 			<div sclass="row"> -->
+				<div sclass="col-md-4">
+					<image id="productImg"></image>
+					<image id="productImg1"></image>
+				</div>
+				<div sclass="col-md-4">
+					<image id="productImg2"></image>
+					<image id="productImg3"></image>
+				</div>
+
+<!-- 			</div> -->
+
+		</div>
+	</div>
 </zk>
